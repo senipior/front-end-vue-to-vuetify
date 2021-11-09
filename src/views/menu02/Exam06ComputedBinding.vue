@@ -1,20 +1,20 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Exam06ComputedBinding
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <p>ssn1: {{ssn1}} </p>
             <p>ssn2: {{ssn2}} </p>
             <p>date: {{date}} </p>
-            <p>ssn: {{ssn1}}-{{ssn2.charAt(0)}}+****** </p>
+            <p>ssn: {{ssn1}}-{{ssn2.charAt(0)}}****** </p>
             <p>ssn: {{getSsn()}} </p>
             <p>ssn: {{computedSsn}} </p>
-            <button class="btn btn-info btn-sm mt-2" @click="changeData">변경</button>
-        </div>
-    </div>
+            <v-btn color="info" class="mr-2" small @click="changeData">변경</v-btn>
+        </v-card-text>
+    </v-card>
 </template>
 
 
@@ -39,19 +39,19 @@ export default {
                 console.log("getSsn() 실행됨");
                 const ssn = this.ssn1 + "-" + this.ssn2.charAt(0) + "******";
                 return ssn;
-            },
-            changeData() {
-                this.date = new Date();
-                this.ssn2= "2220123";
-            },
-        computed: {
-            computedSsn() {
-                console.log("computedSsn() 실행됨");
-                const ssn = this.ssn1 + "-" + this.ssn2.charAt(0) + "******";
-                return ssn;
-            }
-        }
-    }
+        },
+        changeData() {
+            this.date = new Date();
+            this.ssn2= "2220123";
+        },
+    },
+    computed: {
+        computedSsn() {
+            console.log("computedSsn() 실행됨");
+            const ssn = this.ssn1 + "-" + this.ssn2.charAt(0) + "******";
+            return ssn;
+        },
+    },
 }
 </script>
 

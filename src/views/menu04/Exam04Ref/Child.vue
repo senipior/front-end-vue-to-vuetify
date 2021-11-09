@@ -1,17 +1,17 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Child
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <p>data: {{data}}</p>
-            <hr/>
-             <button class="btn btn-info btn-sm mr-2" @click="handleParentData">부모 데이터 읽기</button>
-            <button class="btn btn-info btn-sm mr-2" @click="handleParentMethod">부모 메소드 호출</button>
-        </div>
-    </div>
+            <v-divider/>
+            <v-btn color="info" class="mr-2" small @click="handleParentData">부모 데이터 읽기</v-btn>
+            <v-btn color="info" class="mr-2" small @click="handleParentMethod">부모 메소드 호출</v-btn>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

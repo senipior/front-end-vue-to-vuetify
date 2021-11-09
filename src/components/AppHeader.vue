@@ -4,8 +4,8 @@
       <img src="../assets/logo.png" alt="" width="30" height="30" class="align-top mr-2" />Vue.js
     </router-link>
     <div>
-      <router-link v-if="$store.state.userId === ''" to="/menu07/auth/jwtauth" class="btn btn-success btn-sm">로그인</router-link>
-      <button v-if="$store.state.userId !== ''" class="btn btn-success btn-sm" @click="handleLogout">로그아웃</button>
+      <v-btn color="info" class="mr-2" small><router-link v-if="$store.state.userId === ''" to="/menu07/auth/jwtauth">로그인</router-link></v-btn>
+      <v-btn color="info" class="mr-2" small v-if="$store.state.userId !== ''" @click="handleLogout">로그아웃</v-btn>
     </div>
   </nav>
 </template>

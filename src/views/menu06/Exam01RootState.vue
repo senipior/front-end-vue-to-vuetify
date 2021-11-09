@@ -1,29 +1,29 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Exam01RootState
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <h6> [Root State 읽기] </h6>
             <p> userId 단방향 바인딩: {{$store.state.userId}}</p>
             <p> userId 단방향 바인딩: {{$store.getters.getUserId}}</p>
             <p> userId 단방향 바인딩: {{getUserId()}}</p>
             <p> userId 단방향 바인딩: {{computedUserId}}</p>
-            <p> userId 양방향 바인딩: <input type="text" v-model="$store.state.userId"/></p>
+            <p> userId 양방향 바인딩: <v-text-field type="text" v-model="$store.state.userId"/></p>
 
-            <hr/>
+            <v-divider/>
 
             <h6>[Root State 변경]</h6>
-            <p>Component userId 양방향 바인딩: <input type="text" v-model="userId"/></p>
+            <p>Component userId 양방향 바인딩: <v-text-field type="text" v-model="userId"/></p>
             <div class="mt-2">
-                <button class="btn btn-info btn-sm mr-2" @click="changeUserIdByMutation">userId 변경(Mutation 동기 방식)</button>
-                <button class="btn btn-info btn-sm mr-2" @click="changeUserIdByAction">userId 변경(Action 비동기 방식)</button>
+                <v-btn color="info" class="mr-2" small @click="changeUserIdByMutation">userId 변경(Mutation 동기 방식)</v-btn>
+                <v-btn color="info" class="mr-2" small @click="changeUserIdByAction">userId 변경(Action 비동기 방식)</v-btn>
             </div>
             <child class="mt-2"/>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

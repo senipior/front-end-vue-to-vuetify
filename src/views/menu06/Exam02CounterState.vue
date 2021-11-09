@@ -1,28 +1,28 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Exam02CounterState
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <h6> [Counter State 읽기] </h6>
             <p> counter/count 단방향 바인딩: {{$store.state.counter.count}}</p>
             <p> counter/count 단방향 바인딩: {{$store.getters["counter/getCount"]}}</p>
             <p> counter/count 단방향 바인딩: {{getCount()}}</p>
             <p> counter/count 단방향 바인딩: {{computedCount}}</p>
-            <p> counter/count 양방향 바인딩: <input type="text" v-model.number="$store.counter.count"/></p>
+            <p> counter/count 양방향 바인딩: <v-text-field type="text" v-model.number="$store.state.counter.count"/></p>
 
-            <hr/>
+            <v-divider/>
 
             <h6>[Counter State 변경]</h6>
-            <p>Component value 양방향 바인딩: <input type="text" v-model.number="value"/></p>
+            <p>Component value 양방향 바인딩: <v-text-field type="text" v-model.number="value"/></p>
             <div class="mt-2">
-                <button class="btn btn-info btn-sm mr-2" @click="changeCountByMutation">counter/count 변경(Mutation 동기 방식)</button>
-                <button class="btn btn-info btn-sm mr-2" @click="changeCountByAction">counter/count 변경(Action 비동기 방식)</button>
+                <v-btn color="info" class="mr-2" small @click="changeCountByMutation">counter/count 변경(Mutation 동기 방식)</v-btn>
+                <v-btn color="info" class="mr-2" small @click="changeCountByAction">counter/count 변경(Action 비동기 방식)</v-btn>
             </div>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

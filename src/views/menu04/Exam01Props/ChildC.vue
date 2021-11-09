@@ -1,11 +1,11 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             ChildC
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <p>propA: {{propA + 10}}</p>
             <p>propB: {{propB + 10}}</p>
             <p>propC: {{propC + 10}}</p>
@@ -20,8 +20,8 @@
                 </ul>
             </p>
             <p>propH: {{propH}}</p>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

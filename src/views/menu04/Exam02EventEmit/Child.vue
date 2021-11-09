@@ -1,22 +1,22 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Child
-        </div>
-        <div class="card-body">
-            <h6>[자식 - > 부모]</h6>
-            <button class="btn btn-info btn-sm mr-2" @click="handleBtn1">child-event-1 emit</button>
-            <button class="btn btn-info btn-sm mr-2" @click="handleBtn2">child-event-2 emit</button>
-            <button class="btn btn-info btn-sm mr-2" @click="handleBtn5">data2 값 전달하기</button>
-            <hr/>
-            <h6>[부모 - > 자식 -> 부모 -> 자식]</h6>
-            <p class="mb-2">부모로부터 받은 counter: {{counter}}</p>
-            <button class="btn btn-info btn-sm mr-2" @click="handleBtn3">증가 요청(자식->부모)</button>
-            <button class="btn btn-info btn-sm mr-2" @click="handleBtn4">감소 요청(자식->부모)</button>
-        </div>
-    </div>
+        </v-card-title>
+        <v-card-text>
+            <v-card-text class="text-h6">[자식 - > 부모]</v-card-text>
+            <v-btn color="info" class="mr-2" small @click="handleBtn1">child-event-1 emit</v-btn>
+            <v-btn color="info" class="mr-2" small @click="handleBtn2">child-event-2 emit</v-btn>
+            <v-btn color="info" class="mr-2" small @click="handleBtn5">data2 값 전달하기</v-btn>
+            <v-divider/>
+            <v-card-text class="text-h6">[부모 - > 자식 -> 부모 -> 자식]</v-card-text>
+            <v-card-text class="mb-2">부모로부터 받은 counter: {{counter}}</v-card-text>
+            <v-btn color="info" class="mr-2" small @click="handleBtn3">증가 요청(자식->부모)</v-btn>
+            <v-btn color="info" class="mr-2" small @click="handleBtn4">감소 요청(자식->부모)</v-btn>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

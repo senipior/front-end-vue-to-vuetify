@@ -1,25 +1,25 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Exam04Ref
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <p>data: {{data}}</p>
-            <hr/>
-            <button class="btn btn-info btn-sm mr-2" @click="handleChildData">자식 데이터 읽기</button>
-            <button class="btn btn-info btn-sm mr-2" @click="handleChildMethod">자식 메소드 호출</button>
-            <hr/>
+            <v-divider/>
+            <v-btn color="info" class="mr-2" small @click="handleChildData">자식 데이터 읽기</v-btn>
+            <v-btn color="info" class="mr-2" small @click="handleChildMethod">자식 메소드 호출</v-btn>
+            <v-divider/>
             <Child ref="childRef"/>
-            <hr/>
-            <div class="d-flex">
-            <input type="text" ref="inputRef" class="mr-2"/>
-            <button class="btn btn-info btn-sm mr-2" @click="handleInputFocus">요소 포커스 주기</button>
-            <button class="btn btn-info btn-sm mr-2" @click="handleInputValue">요소의 값 변경</button>
-            </div>
-        </div>
-    </div>
+            <v-divider/>
+            <v-container>
+                <v-text-field type="text" ref="inputRef" class="mr-2" value=""/>
+                <v-btn color="info" class="mr-2" small @click="handleInputFocus">요소 포커스 주기</v-btn>
+                <v-btn color="info" class="mr-2" small @click="handleInputValue">요소의 값 변경</v-btn>
+            </v-container>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>
@@ -30,12 +30,12 @@ export default {
     name: "Exam04Ref",
     // components that i want to add
     components: {
-        Child
+        Child,
     },
     // component data definition
     data: function() {
         return {
-            data: "parent-data"
+            data: "parent-data",
         };
     },
     // component method definition

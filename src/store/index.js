@@ -4,7 +4,6 @@ import Vuex from 'vuex'
 import counter from "./counter";
 
 import axiosConfig from "@/apis/axiosConfig";
-import axios from 'axios';
 
 Vue.use(Vuex)
 

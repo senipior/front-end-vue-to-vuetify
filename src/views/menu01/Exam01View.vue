@@ -4,7 +4,7 @@
     <v-card>
         <v-card-title class="title">Exam01View</v-card-title>
         <v-card-text>
-            <div class="text-h6">선언적 방식 화면 이동</div>
+            <div class="text-h6 font-weight-bold">선언적 방식 화면 이동</div>
         </v-card-text>
         <v-card-actions>
             <router-link to="/menu01/exam02view"><v-btn color="info" class="mr-2" small>/menu01/exam02view</v-btn></router-link>

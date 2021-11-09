@@ -1,18 +1,18 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Exam03Inject
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <p>data1: {{data1}}</p>
             <p>data2: {{data2}}</p>
-            <button class="btn btn-info btn-sm mt-2" @click="changeData">변경</button>
-            <hr/>
+            <v-btn color="info" class="mr-2" small @click="changeData">변경</v-btn>
+            <v-divider/>
             <child-a/>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

@@ -1,20 +1,20 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title class="text-h5 font-weight-bold">
             Exam01Props
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <child-a :prop1="data1" 
                     :prop2="data2"
                     :productNo="pno"
                     :product-kind="pkind"
                     :product-price="pprice"/>
-            <hr/>
+            <v-divider/>
             <child-b :product="product" v-bind="product"/>
             <!-- v-bind="product"는 product.number와 product.kind가 넘어가는 효과 -->
-            <hr/>
+            <v-divider/>
             <child-c propD="string-data"
                     :propA="3"
                     :propB="5"
@@ -23,8 +23,8 @@
                     :propF="{message:'hello, vue'}"
                     :propG="['red', 'green', 'blue']"
                     :propH="5"/>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

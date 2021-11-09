@@ -1,18 +1,18 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             ChildA
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <p>prop1: {{prop1}}</p>
             <p>prop2: {{prop2}}</p>
             <p>productNo: {{productNo}}</p>
             <p>productKind: {{productKind}}</p>
             <p>productPrice: {{productPrice}}</p>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

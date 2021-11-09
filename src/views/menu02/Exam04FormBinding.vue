@@ -5,66 +5,55 @@
         <v-card-title>
             Exam04FormBinding
         </v-card-title>
-        <v-form v-on:submit.prevent="handleSubmit">
-            <v-text-field label="Name" v-model="product.name" type="text" required ></v-text-field>
-            <v-text-field label="Company" v-model="product.company" type="text" required></v-text-field>
-            <v-text-field label="Price" v-model="product.price" type="number" prefix="$" required></v-text-field>
-            <v-textarea label="Info" v-model="product.info" type="text"></v-textarea>
-            <v-select label="MadeIn" v-model="product.madein" :items="contries" type="text"/>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Colors</label>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" value="black" v-model="product.colors"/>
-                        <label class="form-check-label">black</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" value="white" v-model="product.colors"/>
-                        <label class="form-check-label">white</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" value="red" v-model="product.colors"/>
-                        <label class="form-check-label">red</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Sale1</label>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" v-model="product.sale1"/>
-                        <label class="form-check-label">판매여부</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Sale2</label>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" 
-                            v-model="product.sale2" true-value="yes" false-value="no"/>
-                        <label class="form-check-label">판매여부</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Sex</label>
-                <div class="col-sm-10">
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" v-model="product.sex" value="man"/>
-                        <label class="form-check-label">Man</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" v-model="product.sex" value="woman"/>
-                        <label class="form-check-label">Woman</label>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <v-btn color="info" class="mr-2" small v-bind:disabled="disabledRegButton">등록</v-btn>
-                <v-btn color="info" class="mr-2" small router-link to="/">취소</v-btn>
-            </div>
-        </v-form>    
+        <v-card-text fluid>
+            <v-form v-on:submit.prevent="handleSubmit">
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">Name</v-card-text></v-col>
+                    <v-col cols="10"><v-text-field v-model="product.name" type="text" required></v-text-field></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">Company</v-card-text></v-col>
+                    <v-col cols="10"><v-text-field v-model="product.company" type="text" required></v-text-field></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">Price</v-card-text></v-col>
+                    <v-col cols="10"><v-text-field v-model="product.price" type="number" prefix="$" required></v-text-field></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">Info</v-card-text></v-col>
+                    <v-col cols="10"><v-textarea v-model="product.info" type="text" required></v-textarea></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">MadeIn</v-card-text></v-col>
+                    <v-col cols="10"><v-select v-model="product.madein" :items="contries" type="text"/></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">Color</v-card-text></v-col>
+                    <v-col cols="10"><v-select v-model="product.color" :items="colors" type="text"/></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">Sale1</v-card-text></v-col>
+                    <v-col cols="10"><v-checkbox v-model="product.sale1" label="판매 여부" required></v-checkbox></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">Sale2</v-card-text></v-col>
+                    <v-col cols="10"><v-checkbox v-model="product.sale2" label="판매 여부" required></v-checkbox></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2"><v-card-text class="font-weight-bold">Sale2</v-card-text></v-col>
+                    <v-col cols="10">
+                        <v-checkbox value="man" label="man" v-model="product.sex"/>
+                        <v-checkbox value="woman" label="woman" v-model="product.sex"/>  
+                    </v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="2">
+                        <v-btn color="info" class="mr-2" small v-bind:disabled="disabledRegButton">등록</v-btn>
+                        <v-btn color="info" small router-link to="/">취소</v-btn>
+                    </v-col>
+                </v-row>
+            </v-form>    
+        </v-card-text>
     </v-card>
 </template>
 
@@ -91,6 +80,9 @@ export default {
             },
             contries: [
                 '한국','미국','독일'
+            ],
+            colors: [
+                'black', 'white', 'red'
             ],
         };
     },

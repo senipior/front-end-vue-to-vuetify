@@ -1,20 +1,20 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Exam02EventEmit
-        </div>
-        <div class="card-body">
-            <p class="mb-2">counter: {{counter}}</p>
+        </v-card-title>
+        <v-card-text>
+            <v-card-text class="mb-2 text-h6 font-weight-bolder">counter: {{counter}}</v-card-text>
             <child @child-event-1="handleChildEvent1"
                     @child-event-2="handleChildEvent2"
                     :counter="counter"
                     @counter-increment="handleCounterIncrement"
                     @counter-decrement="handleCounterDecrement"
                     @data-pass="dataPass"/>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

@@ -12,8 +12,8 @@
 
         <template v-slot:footer>
             <v-card-actions>
-            <v-btn color="info" class="mr-2" small @click="$emit('close')">확인</v-btn>
-            <v-btn color="info" small @click="$emit('close')">닫기</v-btn>
+                <v-btn color="info" class="mr-2" small @click="$emit('close')">확인</v-btn>
+                <v-btn color="info" small @click="$emit('close')">닫기</v-btn>
             </v-card-actions>
         </template>
     </modal-dialogue-template>

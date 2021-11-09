@@ -1,30 +1,30 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Exam01EventHandling
-        </div>
-        <div class="card-body">
-            <h6>[Event Handler]</h6>
-            <button class="btn btn-info btn-sm mr-2" v-on:click="handleBtn1">버튼1</button>
-            <button class="btn btn-info btn-sm mr-2" @click="handleBtn2('vue is good', $event)" name="btn2">버튼2</button>
-            <button class="btn btn-info btn-sm mr-2" @click="handleBtn2('vue is good', $event)" name="btn3">버튼3</button>
-            <hr/>
-            <a href="/" @click.prevent="handleLink()">링크</a>
-            <hr/>
+        </v-card-title>
+        <v-container>
+            <v-card-text class="text-h6">[Event Handler]</v-card-text>
+            <v-btn color="info" class="mr-2" small v-on:click="handleBtn1">버튼1</v-btn>
+            <v-btn color="info" class="mr-2" small @click="handleBtn2('vue is good', $event)" name="btn2">버튼2</v-btn>
+            <v-btn color="info" small @click="handleBtn2('vue is good', $event)" name="btn3">버튼3</v-btn>
+            <v-divider/>
+            <a href="/" @click.prevent="handleLink($event)">링크</a>
+            <v-divider/>
             <!-- 세로 정렬 align-items-center justify-content-center -->
-            <form @submit.prevent="handleSubmit">
-                <div class="d-flex">  
-                    <input type="submit" value="제출" class="btn btn-info btn-sm mr-2"/>
-                    <button class="btn btn-info btn-sm mr-2">제출</button>
+            <v-form @submit.prevent="handleSubmit">
+                <v-flex>  
+                    <v-btn color="info" class="mr-2" small><input type="submit" value="제출"/></v-btn>
+                    <v-btn color="info" class="mr-2" small type="submit">제출</v-btn>
                     <input type="image" :src="require(`@/assets/logo.png`)" height="30"/>
-                </div>
-            </form>
-            <hr/>
-            <button class="btn btn-info btn-sm mr-2" @click.ctrl="handleBtn3" name="btn3">Ctrl+Click</button>
-        </div>
-    </div>
+                </v-flex>
+            </v-form>
+            <v-divider/>
+            <v-btn color="info" class="mr-2" small @click.ctrl="handleBtn3" name="btn3">Ctrl+Click</v-btn>
+        </v-container>
+    </v-card>
 </template>
 
 <script>

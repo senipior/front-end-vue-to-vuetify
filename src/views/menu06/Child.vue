@@ -1,17 +1,17 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Child
-        </div>
-        <div class="card-body">
-            <h6> [Root State 읽기] </h6>
+        </v-card-title>
+        <v-card-text>
+            <v-card-text class="text-h6"> [Root State 읽기] </v-card-text>
             <p> userId 단방향 바인딩: {{$store.state.userId}}</p>
             <p> userId 단방향 바인딩: {{$store.getters.getUserId}}</p>
             <p> userId 양방향 바인딩: <input type="text" v-model="$store.state.userId"/></p>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

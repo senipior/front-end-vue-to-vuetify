@@ -1,29 +1,29 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-title>
             Exam05ForRepeatBinding
-        </div>
-        <div class="card-body">
-            <h6>범위 반복</h6>
+        </v-title>
+        <v-container>
+            <v-card-text class="text-h6">범위 반복</v-card-text>
             <div>
                 <span v-for="n in 10" :key="n" class="mr-2">
                     <img :src="require(`@/assets/photos/photo${n}.jpg`)" height="150" v-if="n%2===0"/>
                 </span>
             </div>
-            <hr/>
+            <v-divider/>
 
-            <h6>배열 항목 반복</h6>
+            <v-card-text class="text-h6">배열 항목 반복</v-card-text>
             <div>
                 <span v-for="(photo, index) in photos" :key="index">
                     <img :src="require(`@/assets/photos/${photo}`)" height="150" v-if="index<=2"/>
                 </span>
             </div>
 
-            <hr/>
+            <v-divider/>
 
-            <h6>객체 배열 항목 반복</h6>
+            <v-card-text class="text-h6">객체 배열 항목 반복</v-card-text>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -42,8 +42,8 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </div>
+        </v-container>
+    </v-card>
 </template>
 
 <script>
@@ -60,7 +60,7 @@ export default {
     data: function() {
         return {
             boards: boardData.boards,
-            photos: photoData.photos
+            photos: photoData.photos,
         };
     },
     // component method definition

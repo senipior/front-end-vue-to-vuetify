@@ -1,42 +1,34 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Exam02Watch
-        </div>
-        <div class="card-body">
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">UserId</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="userId">
-                </div>
-            </div>
-            <hr/>
-            <form>      
-                <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="product.name">
-                </div>
-                </div>
-                <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Company</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" v-model="product.company">
-                </div>
-                </div>
-                <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Price</label>
-                <div class="col-sm-10">
-                    <input type="number" :class="`form-control ${bgColor}`" v-model.number="product.price">
-                </div>
-                </div>
-            </form> 
-            <hr/>
-            <button @click="handleButton" class="btn btn-info btn-sm">product 객체 변경</button>    
-        </div>
-    </div>
+        </v-card-title>
+        <v-container>
+            <v-row fluid>
+                <v-col cols="3"><v-card-text class="font-weight-bold">UserId</v-card-text></v-col>
+                <v-col cols="9"><v-text-field v-model="userId" type="text" required></v-text-field></v-col>
+            </v-row>
+            <v-divider/>
+            <v-form>      
+                <v-row fluid>
+                    <v-col cols="3"><v-card-text class="font-weight-bold">Name</v-card-text></v-col>
+                    <v-col cols="9"><v-text-field v-model="product.name" type="text" required></v-text-field></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="3"><v-card-text class="font-weight-bold">Company</v-card-text></v-col>
+                    <v-col cols="9"><v-text-field v-model="product.company" type="text" required></v-text-field></v-col>
+                </v-row>
+                <v-row fluid>
+                    <v-col cols="3"><v-card-text class="font-weight-bold">Price</v-card-text></v-col>
+                    <v-col cols="9"><v-text-field v-model="product.price" type="number" prefix="$" required></v-text-field></v-col>
+                </v-row>
+            </v-form> 
+            <v-divider/>
+            <v-btn color="info" class="mr-2" small @click="handleButton">product 객체 변경</v-btn>    
+        </v-container>
+    </v-card>
 </template>
 
 <script>

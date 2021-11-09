@@ -1,14 +1,14 @@
 
 <!-- component UI definition-->
 <template>
-    <div class="card">
-        <div class="card-header">
+    <v-card>
+        <v-card-title>
             Child
-        </div>
-        <div class="card-body">
+        </v-card-title>
+        <v-card-text>
             <p>data: {{data}}</p>
-        </div>
-    </div>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>
