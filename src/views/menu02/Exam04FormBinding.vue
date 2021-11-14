@@ -25,7 +25,7 @@
                 </v-row>
                 <v-row fluid>
                     <v-col cols="2"><v-card-text class="font-weight-bold">MadeIn</v-card-text></v-col>
-                    <v-col cols="10"><v-select v-model="product.madein" :items="contries" type="text"/></v-col>
+                    <v-col cols="10"><v-select v-model="product.madein" :items="countries" type="text"/></v-col>
                 </v-row>
                 <v-row fluid>
                     <v-col cols="2"><v-card-text class="font-weight-bold">Color</v-card-text></v-col>
@@ -78,7 +78,7 @@ export default {
                 sale2: "no",
                 sex: "woman"
             },
-            contries: [
+            countries: [
                 '한국','미국','독일'
             ],
             colors: [
